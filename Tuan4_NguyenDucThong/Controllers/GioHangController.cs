@@ -30,7 +30,7 @@ namespace Tuan4_NguyenDucThong.Controllers
         public ActionResult addGioHang(int id, string strURL)
         {
             List<GioHang> listGioHang = LayGioHang();
-            GioHang sanpham = listGioHang.Find(x => x.masach == id);    
+            GioHang sanpham = listGioHang.Find(n => n.masach == id);    
             if(sanpham == null)
             {
                 sanpham = new GioHang(id);
@@ -95,7 +95,7 @@ namespace Tuan4_NguyenDucThong.Controllers
         }
 
         // DeleteGioHang
-        public ActionResult DeleteGioHang(int id)
+        public ActionResult XoaGiohang(int id)
         {
             List<GioHang> listGioHang = LayGioHang();
             GioHang sanpham = listGioHang.SingleOrDefault(n => n.masach == id);
@@ -108,7 +108,7 @@ namespace Tuan4_NguyenDucThong.Controllers
         }
 
         //UpdateGioHang
-        public ActionResult UpdateGioHang(int id, FormCollection collection)
+        public ActionResult CapnhatGiohang(int id, FormCollection collection)
         {
             List<GioHang> listGioHang = LayGioHang();
             GioHang sanpham = listGioHang.SingleOrDefault(n=>n.masach == id);
